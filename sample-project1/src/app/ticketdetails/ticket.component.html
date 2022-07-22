@@ -1,0 +1,40 @@
+<h2>Ticket Details</h2>
+<div class="col-md-6">
+    <label class="form-label">PNR</label>
+    <input [(ngModel)]="TicketModel.pnr" class="form-control" type="text"/>
+  </div>
+  <br>
+  
+  <div class="col-md-6">
+  <div style="padding:5px"><input type="submit" class="btn btn-primary" (click)="GetTicketData()" value="Check Ticket"/>
+
+</div>
+
+<h3>Tickets List</h3> 
+<table border="1">
+  <thead>
+    <td>Booking Id</td>
+    <td>Airline Id</td>
+    <td>Airline Name</td>
+    <td>UserName</td>
+    <td>Gender</td>
+    <td>Seatnum</td>
+    <td>Address</td>
+    <td>Contact</td>
+    <td>Email</td>
+    <td>PNR</td>
+    <td>Actions</td>
+  </thead>
+  <tr *ngFor="let cust of TicketModels">
+    <td>{{cust.bookingId}}</td>
+    <td>{{cust.airlineId}}</td>
+    <td>{{cust.airlinename}}</td>
+    <td>{{cust.username}}</td>
+    <td>{{cust.gender}}</td>
+    <td>{{cust.seatnum}}</td>
+    <td>{{cust.address}}</td>
+    <td>{{cust.contact}}</td>
+    <td>{{cust.email}}</td>
+    <td>{{cust.pnr}}</td>
+    </tr>
+</table>

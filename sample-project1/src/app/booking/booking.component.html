@@ -1,0 +1,71 @@
+<div class="row g-3 py-4">
+  <h2>Book Flight</h2>
+    </div>
+          
+  <div class="col-md-5">
+  <label class="form-label">Airline Id</label>
+  <input [(ngModel)]="BookingModel.airlineId" class="form-control" type="text"/>
+</div>
+<div class="col-md-5">
+  <label class="form-label">Airline Name</label>
+  <input [(ngModel)]="BookingModel.airlinename" class="form-control" type="text"/>
+</div>
+<div class="col-md-5">
+  <label class="form-label">UserName</label>
+  <input [(ngModel)]="BookingModel.username" class="form-control" type="text"/>
+</div>
+<div class="col-md-5">
+    <label class="form-label">Gender</label>
+  <select id="BookingModel.gender" class="form-select">
+    
+    <option>Female</option>
+    <option>Male</option>
+    <option>Others</option>
+  </select>
+
+</div>
+<div class="col-md-5">
+  <label class="form-label">Seatnum</label>
+  <input [(ngModel)]="BookingModel.seatnum" class="form-control" type="text"/>
+</div>
+<div class="col-md-5">
+  <label class="form-label">Address</label>
+  <input [(ngModel)]="BookingModel.address" class="form-control" type="text"/>
+</div>
+<div class="col-md-5">
+  <label class="form-label">Contact</label>
+  <input [(ngModel)]="BookingModel.contact" class="form-control" type="text"/>
+</div>
+<div class="col-md-5">
+  <label class="form-label">Email</label>
+  <input [(ngModel)]="BookingModel.email" class="form-control" type="text"/>
+</div>
+<div>
+  <div style="padding:5px"><input type="submit" class="btn btn-primary" (click)="AddBooking()" value="AddBooking"/>
+</div>
+<h3>Bookings List</h3> 
+<table border="1">
+  <thead>
+    <td>Airline Id</td>
+    <td>Airline Name</td>
+    <td>UserName</td>
+    <td>Gender</td>
+    <td>Seatnum</td>
+    <td>Address</td>
+    <td>Contact</td>
+    <td>Email</td>  
+    <td>Actions</td>
+  </thead>
+  <tr *ngFor="let cust of BookingModels">
+    <td>{{cust.airlineId}}</td>
+    <td>{{cust.airlinename}}</td>
+    <td>{{cust.username}}</td>
+    <td>{{cust.gender}}</td>
+    <td>{{cust.seatnum}}</td>
+    <td>{{cust.address}}</td>
+    <td>{{cust.contact}}</td>
+    <td>{{cust.email}}</td>
+    <td>{{cust.pnr}}</td>
+    <td><input type="button" (click)="EditBooking(cust)" value = "Edit"/><input type="button" (click)="DeleteBooking(cust)" value = "Delete" /></td>
+  </tr>
+</table>

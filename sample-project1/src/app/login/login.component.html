@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card border-0">
+            <div class="card-body">
+                <div class="card border border-primary shadow-0 mb-3" style="max-width: 40rem; margin-left:250px;">
+                    <div class="card-header">Login</div>
+                    <div class="card-body text-primary">
+
+                            <div class="form-group">
+                                <label class="form-label">UserName</label>
+                                <input [(ngModel)]="loginModel.userName" class="form-control" type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Password</label>
+                                <input [(ngModel)]="loginModel.password" class="form-control" type="text" />
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary" value="Login" (click)="Login()" />
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+
+<h2>Search Flight</h2>
+<div class="col-md-6">
+<label class="form-label">From Place</label>
+<input [(ngModel)]="SearchModel.fromplace" class="form-control" type="text" />
+</div>
+<br>
+<div style="padding:5px"><input type="submit"  class="btn btn-primary" (click)="GetSearchData()" value="Search Airline"/>
+
+</div>
+
+
+<section class="mb-5">
+<div class="container mt-7">
+<div class="row">
+<div class="col-12">
+    <div class="card shadow">
+        <div class="card-header border-0">
+
+<h3>Search By Boarding</h3> 
+<table border="1">
+        <thead>
+            <td>AirlineId</td>
+            <td>AirlineName</td>
+            <td>fromPlace</td>
+            <td>To Place</td>
+            <td>startdTime</td>
+            <td>enddTime</td>
+            <td>ScheduleDays</td>
+            <td>Bclsseats</td>
+            <td>nonBclsseats</td>
+            <td>Ticketprice</td>
+            <td>Noofrows</td>
+            <td>Meal</td>
+        </thead>
+        <tr *ngFor="let cust of SearchModels">
+            <td>{{cust.airlineId}}</td>
+            <td>{{cust.airlinename}}</td>
+            <td>{{cust.fromplace}}</td>
+            <td>{{cust.toplace}}</td>
+            <td>{{cust.startdatetime}}</td>
+            <td>{{cust.enddatetime}}</td>
+            <td>{{cust.scheduleddays}}</td>
+            <td>{{cust.businessclsseats}}</td>
+            <td>{{cust.nonbusinessclsseats}}</td>
+            <td>{{cust.ticketprice}}</td>
+            <td>{{cust.noofrows}}</td>
+            <td>{{cust.meal}}</td>
+            
+    <td><input type="button" (click)="BookFlight()" value = "Book Flight" /></td>
+  
+</tr>
+</table>
+

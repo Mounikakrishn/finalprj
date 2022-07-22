@@ -1,0 +1,55 @@
+<section class="mb-5">
+    <div class="container mt-7">
+<div class="row">
+    <div class="col-12">
+        <div class="card shadow">
+            <div class="card-header border-0">
+
+<h2>Add Airline</h2>
+<div>
+  <label class="form-label">AirlineId</label>
+  <input [(ngModel)]="airlinedataModel.airlineId" class="form-control" type="text"/>
+</div>
+<div>
+  <label class="form-label">Airline Name</label>
+  <input [(ngModel)]="airlinedataModel.airlineName" class="form-control" type="text"/>
+</div>
+<div>
+  <label class="form-label">Airline Logo</label>
+  <input [(ngModel)]="airlinedataModel.airlineLogo" class="form-control" type="text"/>
+</div>
+<div>
+  <label class="form-label">Address </label>
+  <input [(ngModel)]="airlinedataModel.address" class="form-control" type="text"/>
+</div>
+<div>
+  <label class="form-label">Contact Number</label>
+  <input [(ngModel)]="airlinedataModel.contactNumber" class="form-control" type="text"/>
+</div>
+<br>
+  <div style="padding:5px"><input type="submit" class="btn btn-primary" (click)="AddAirline()" value="AddAirline"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<h3>Bookings List</h3> 
+<table border="1">
+    <thead class="table-light">
+    <td>AirlineId </td>
+    <td>AirlineName </td>
+    <td>AirlineLogo </td>
+    <td>Address </td>
+    <td>ContactNumber </td> 
+    <td>Actions </td>
+  </thead>
+  <tr *ngFor="let cust of airlinedataModels">
+    <td>{{cust.airlineId}}</td>
+    <td>{{cust.airlineName}}</td>
+    <td>{{cust.airlineLogo}}</td>
+    <td>{{cust.address}}</td>
+    <td>{{cust.contactNumber}}</td>
+    
+    <td><input type="button" (click)="EditAirline(cust)" value = "Edit"/><input type="button" (click)="DeleteAirline(cust)" value = "Delete" /></td>
+  </tr>
+</table>

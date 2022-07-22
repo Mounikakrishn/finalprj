@@ -1,0 +1,114 @@
+<section class="mb-5">
+    <div class="container mt-7">
+<div class="row">
+    <div class="col-12">
+        <div class="card shadow">
+            <div class="card-header border-0">
+ 
+<h2>Add Inventory</h2>
+<div>
+    <label class="form-label">Airline Id</label>
+     <input [(ngModel)]="InventoryModel.airlineId" class="form-control" type="text" />
+    </div>
+<div>
+    <label class="form-label">Airline Name</label>
+    <input [(ngModel)]="InventoryModel.airlinename"  class="form-control" type="text" />
+</div>
+<div>
+    <label class="form-label">From Place</label>
+    <input [(ngModel)]="InventoryModel.fromplace" class="form-control" type="text" />
+</div>
+<div>
+    <label class="form-label">To Place</label>
+    <input [(ngModel)]="InventoryModel.toplace"  class="form-control" type="text" />
+</div>
+<div>
+    <label class="form-label">Startdate Time</label>
+    <input [(ngModel)]="InventoryModel.startdatetime" class="form-control" type="datetime-local" />
+</div>
+<div>
+    <label class="form-label">Enddate Time</label>
+    <input [(ngModel)]="InventoryModel.enddatetime" class="form-control" type="datetime-local" />
+</div>
+<div>
+    <label class="form-label">Scheduled days</label>
+    <input [(ngModel)]="InventoryModel.scheduleddays" class="form-control" type="text" />
+</div>
+<div>
+    <label class="form-label">Businesscls Seats</label>
+    <input [(ngModel)]="InventoryModel.businessclsseats" class="form-control" type="text" />
+</div>
+<div>
+    <label class="form-label">Non  Businessclsseats</label>
+    <input [(ngModel)]="InventoryModel.nonbusinessclsseats" class="form-control" type="text" />
+</div>
+<div>
+    <label class="form-label">Ticket Price</label>
+    <input [(ngModel)]="InventoryModel.ticketprice" class="form-control" type="text" />
+</div>
+<div>
+    <label class="form-label">Noof Rows</label>
+    <input [(ngModel)]="InventoryModel.noofrows" class="form-control" type="text" />
+</div>
+<div>
+    <label class="form-label">Meal Type</label>
+    <select [(ngModel)]="InventoryModel.meal" class="form-control">
+        <option>select</option>
+        <option>Non-Veg</option>
+        <option>Veg</option>
+    </select>
+</div>
+</div>
+<div class="py-4">
+    <input type="submit"  class="btn btn-primary" value="Add Inventory" (click)="AddInventory()" />
+</div>
+        </div>
+    </div>
+</div>
+    </div>
+
+<section class="mb-5">
+    <div class="container mt-7">
+<div class="row">
+    <div class="col-12">
+        <div class="card shadow">
+            <div class="card-header border-0">
+    
+<h3>Inventory List</h3> 
+<table border="1">
+<thead>
+    <td>AirlineId</td>
+    <td>AirlineName</td>
+    <td>fromPlace</td>
+    <td>To Place</td>
+    <td>startdTime</td>
+    <td>enddTime</td>
+    <td>ScheduleDays</td>
+    <td>Bclsseats</td>
+    <td>nonBclsseats</td>
+    <td>Ticketprice</td>
+    <td>Noofrows</td>
+    <td>Meal</td>
+</thead>
+<tr *ngFor="let cust of InventoryModels">
+    <td>{{cust.airlineId}}</td>
+    <td>{{cust.airlinename}}</td>
+    <td>{{cust.fromplace}}</td>
+    <td>{{cust.toplace}}</td>
+    <td>{{cust.startdatetime}}</td>
+    <td>{{cust.enddatetime}}</td>
+    <td>{{cust.scheduleddays}}</td>
+    <td>{{cust.businessclsseats}}</td>
+    <td>{{cust.nonbusinessclsseats}}</td>
+    <td>{{cust.ticketprice}}</td>
+    <td>{{cust.noofrows}}</td>
+    <td>{{cust.meal}}</td>
+    
+    <td><input type="button" (click)="EditInventory(cust)" value ="Edit"/><input type="button" (click)="DeleteInventory(cust)" value = "Delete"/></td>
+        
+</tr>
+</table>
+            </div>
+        </div>
+    </div>
+</div>
